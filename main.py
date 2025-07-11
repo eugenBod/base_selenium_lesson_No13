@@ -31,34 +31,40 @@ driver.maximize_window()
 
 # Ввод неверного логина, выделение и удаление
 time.sleep(1)
-incorrect_username = driver.find_element(By.XPATH, "//input[@id='user-name']")
-incorrect_username.send_keys(invalid_username)
+username_field = driver.find_element(By.XPATH, "//input[@id='user-name']")
+username_field.send_keys(invalid_username)
 print("Input incorrect login")
+
 time.sleep(1)
-incorrect_username.send_keys(Keys.CONTROL + "a")
+username_field.send_keys(Keys.CONTROL + "a")
+print("Incorrect login highlight")
+
 time.sleep(1)
-incorrect_username.send_keys(Keys.DELETE)
+username_field.send_keys(Keys.DELETE)
 print("Incorrect login deleted")
 
 # Ввод неверного пароля, выделение и удаление
 time.sleep(1)
-incorrect_password = driver.find_element(By.XPATH, "//input[@id='password']")
-incorrect_password.send_keys(invalid_password)
+password_field = driver.find_element(By.XPATH, "//input[@id='password']")
+password_field.send_keys(invalid_password)
 print("Input incorrect password")
+
 time.sleep(1)
-incorrect_password.send_keys(Keys.CONTROL + "a")
+password_field.send_keys(Keys.CONTROL + "a")
+print("Incorrect password highlight")
+
 time.sleep(1)
-incorrect_password.send_keys(Keys.DELETE)
+password_field.send_keys(Keys.DELETE)
 print("Incorrect password deleted")
 
 # Ввод логина
 time.sleep(1)
-driver.find_element(By.XPATH, "//input[@id='user-name']").send_keys(valid_username)
+username_field.send_keys(valid_username)
 print("Input login")
 
 # Ввод пароля
 time.sleep(1)
-driver.find_element(By.XPATH, "//input[@id='password']").send_keys(valid_password)
+password_field.send_keys(valid_password)
 print("Input password")
 
 # Клик по кнопке "Login"
